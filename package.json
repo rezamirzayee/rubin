@@ -20,13 +20,13 @@
     "gulp-watch": "^5.0.1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rezamirzayee/ToDoApp.git"
+    "type": "git+git@github.com:rezamirzayee/rubin.git",
+    "url": "git+https://github.com/rezamirzayee/rubin.git"
   },
   "bugs": {
-    "url": "https://github.com/rezamirzayee/ToDoApp/issues"
+    "url": "https://github.com/rezamirzayee/rubin/issues"
   },
-  "homepage": "https://github.com/rezamirzayee/ToDoApp#readme",
+  "homepage": "",
   "devDependencies": {
     "gulp": "^4.0.2"
   },
