@@ -32,7 +32,7 @@ gulp.task('html', function(callback){
 
 //compiling less file to css
 gulp.task('less', function(callback){
-  return gulp.src('./src/less/main.less')
+  return gulp.src('./src/less/style.less')
 
       .pipe( plumber({
           errorHandler: notify.onError(function(err){
