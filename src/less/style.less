@@ -1,4 +1,5 @@
 
+
 @font-face {
 	font-family: 'Gilroy';
 	font-style: normal;
@@ -25,7 +26,13 @@
 	src: url('../fonts/opensans.woff2') format('woff2'),url('../fonts/opensans.woff') format('woff');
 }
 
-@-webkit-keyframes "bounce" {
+
+
+
+
+
+
+@-webkit-keyframes bounce {
 	0% {
 		-webkit-transform: translateX(-2000px);
 		transform: translateX(-2000px);
@@ -43,7 +50,7 @@
 		transform: translateX(0);
 	}
 }
-@keyframes "bounce" {
+@keyframes bounce {
 	0% {
 		-webkit-transform: translateX(-2000px);
 		transform: translateX(-2000px);
@@ -255,59 +262,67 @@ input[type="radio"].visually-hidden {
 	width: 440px;
 	margin-right: 60px;
 }
-.form-search {
-	position: relative;
-	input[name	= {
-			'search'] {
-				padding-top: 16px;
-				padding-bottom: 12px;
-				width: 315px;
-				padding-left: 40px;
-				font-size: 15px;
-				background-color: #f7e296;
-				border: none;
-				opacity: 0.4;
-				&:hover {
-					opacity: 0.7;
-				}
-				&::-webkit-input-placeholder {
-					font-family: 'Open Sans',Arial,sans-serif;
-					color: #000000;
-					font-weight: 300;
-				}
-				&::-moz-input-placeholder {
-					font-family: 'Open Sans',Arial,sans-serif;
-					color: #000000;
-					font-weight: 300;
-				}
-				&::-ms-input-placeholder {
-					font-family: 'Open Sans',Arial,sans-serif;
-					color: #000000;
-					font-weight: 300;
-				}
-			}
-			"search"] {
-				&:focus {
-					+ {
-						.search-label {
-							&:focus {
-								outline: none;
-								border-bottom: 2px solid #000000;
-								opacity: 1;
-							}
-						}
-						.btn-search {
-							position: static;
-							z-index: 0;
-						}
-					}
-					outline: none;
-					border-bottom: 2px solid #000000;
-					opacity: 1;
-				}
-			}
-		}
-	}
+
+.form-search input[name = 'search']{
+	padding-top: 16px;
+    padding-bottom: 12px;
+    width: 315px;
+    padding-left: 40px;
+
+    font-size: 15px;
+
+    background-color: #f7e296;
+    border: none;
+    opacity: 0.4;
+}
+.form-search input[name = "search"]:focus + .search-label:focus{
+	outline: none;
+	border-bottom: 2px solid #000000;
+	opacity: 1;
+}
+
+.form-search input[name = 'search']::-webkit-input-placeholder,
+.form-search input[name = 'search']::-moz-input-placeholder,
+.form-search input[name = 'search']::-ms-input-placeholder{
+	font-family: 'Open Sans',Arial,sans-serif;
+	color: #000000;
+	font-weight: 300;
+}
+
+.btn-search{
+	position: absolute;
+	z-index: -1;
+
+	font-family: 'Open Sans',Arial,sans-serif;
+    padding-top: 13.5px;
+	padding-bottom: 13.5px;
+    min-width: 80px;
+
+    margin-left: -4px;
+
+    background-color: transparent;
+    border: 2px solid #000000;
+
+    cursor: pointer;
+}
+
+.btn-search:hover{
+	color: #ffffff;
+	background-color: #000000;
+}
+
+.form-search input[name = "search"]:focus + .btn-search{
+	position: static;
+	z-index: 0;
+}
+
+.form-search input[name = 'search']:hover{
+    opacity: 0.7;
+}
+.form-search input[name = "search"]:focus{
+	outline: none;
+	border-bottom: 2px solid #000000;
+	opacity: 1;
 }
 .search-label {
 	position: absolute;
@@ -519,11 +534,9 @@ input[type="radio"].visually-hidden {
 		background-color: #b8a974;
 	}
 	&:hover {
-		+ {
-			.dropdown-content {
-				display: block;
-				z-index: 3;
-			}
+		&+.dropdown-content {
+			display: block;
+			z-index: 3;
 		}
 	}
 }
@@ -802,40 +815,63 @@ input[type="radio"].visually-hidden {
 		}
 	}
 }
-.img-category {
+
+.categories a:hover .img-category{
+	background-color: #f0c52e;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.categories a:focus img,
+.categories a:focus .name-category{
+	opacity: 0.3;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.categories a:focus .img-category{
+	background-color: #f0c52e;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+.img-category{
 	margin-top: 0;
 	width: 160px;
 	min-height: 160px;
 	background-color: #f7e296;
-	img {
-		display: block;
-		margin: 0 auto;
-		padding-top: 42px;
-	}
-	img[alt {
-		= {
-			"Виртуальная {
-				реальность"] {
-					padding-top: 53px;
-				}
-			}
-			"Фитнес-браслеты"] {
-				padding-top: 50px;
-			}
-			"Экшн-камеры"] {
-				padding-top: 39px;
-			}
-			"Умные {
-				часы"] {
-					padding-top: 32px;
-				}
-			}
-			"Квадрокоптеры"] {
-				padding-top: 50px;
-			}
-		}
-	}
 }
+
+.img-category img{
+	display: block;
+    margin: 0 auto;
+    padding-top: 42px;
+}
+
+.img-category img[alt = "Виртуальная реальность"]{
+	padding-top: 53px;
+}
+
+.img-category img[alt = "Фитнес-браслеты"]{
+	padding-top: 50px;
+}
+
+.img-category img[alt = "Экшн-камеры"]{
+	padding-top: 39px;
+}
+
+.img-category img[alt = "Умные часы"]{
+	padding-top: 32px;
+}
+
+.img-category img[alt = "Квадрокоптеры"]{
+	padding-top: 50px;
+}
+
 .name-category {
 	margin: 0;
 	color: #000000;
@@ -1470,19 +1506,19 @@ input[type="radio"].visually-hidden {
 		background-color: #dbdbdb;
 	}
 }
-html[data-nameBrowser {
-	= {
-		"IE"] {
-			.bar-range {
-				margin-top: -16.5px;
-			}
-		}
-		'Firefox'] {
-			.bar-range {
-				height: 0;
-			}
-		}
-	}
+
+html[data-nameBrowser = "IE"] .bar-range{
+	margin-top: -16.5px;
+}
+
+html[data-nameBrowser = 'Firefox'] .bar-range{
+	height: 0;
+}
+
+.bar-range::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 2px;
+	/*background-image:-webkit-linear-gradient(left,#91c92f 0%,#91c92f 50%,#dbdbdb 50%,#dbdbdb 100%);*/
 }
 .intial-value {
 	padding-right: 56px;
@@ -1521,51 +1557,29 @@ html[data-nameBrowser {
 }
 .filter-input-checkbox {
 	&:focus {
-		+ {
-			.filter-checkbox {
-				outline: 5px auto -webkit-focus-ring-color;
-				outline: 5px auto -webkit-focus-ring-color;
-			}
+		&+.filter-checkbox {
+			outline: 5px auto -webkit-focus-ring-color;
+			outline: 5px auto -webkit-focus-ring-color;
 		}
 	}
 	&:checked {
-		+ {
-			.filter-checkbox {
-				&::after {
-					content: '';
-					position: absolute;
-					top: 7px;
-					left: 0;
-					width: 27px;
-					height: 23px;
-					background-image: url('../img/checkbox-on.svg');
-					background-repeat: no-repeat;
-				}
-				&::before {
-					display: none;
-				}
+		&+.filter-checkbox {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 7px;
+				left: 0;
+				width: 27px;
+				height: 23px;
+				background-image: url('../img/checkbox-on.svg');
+				background-repeat: no-repeat;
+			}
+			&::before {
+				display: none;
 			}
 		}
 		&:disabled {
-			+ {
-				.filter-checkbox {
-					color: #a6a6a6;
-					cursor: default;
-					&::before {
-						opacity: 0.25;
-						cursor: default;
-					}
-					&::after {
-						opacity: 0.25;
-						cursor: default;
-					}
-				}
-			}
-		}
-	}
-	&:disabled {
-		+ {
-			.filter-checkbox {
+			&+.filter-checkbox {
 				color: #a6a6a6;
 				cursor: default;
 				&::before {
@@ -1576,6 +1590,20 @@ html[data-nameBrowser {
 					opacity: 0.25;
 					cursor: default;
 				}
+			}
+		}
+	}
+	&:disabled {
+		&+.filter-checkbox {
+			color: #a6a6a6;
+			cursor: default;
+			&::before {
+				opacity: 0.25;
+				cursor: default;
+			}
+			&::after {
+				opacity: 0.25;
+				cursor: default;
 			}
 		}
 	}
@@ -1627,11 +1655,9 @@ html[data-nameBrowser {
 	}
 	&:checked {
 		&:disabled {
-			+ {
-				.filter-radio {
-					color: #a6a6a6;
-					cursor: default;
-				}
+			&+.filter-radio {
+				color: #a6a6a6;
+				cursor: default;
 			}
 		}
 	}
@@ -1646,41 +1672,19 @@ html[data-nameBrowser {
 }
 .filter-input-radio {
 	&:focus {
-		+ {
-			.filter-radio {
-				outline: 5px auto -webkit-focus-ring-color;
-				outline: 5px auto -webkit-focus-ring-color;
-			}
+		&+.filter-radio {
+			outline: 5px auto -webkit-focus-ring-color;
+			outline: 5px auto -webkit-focus-ring-color;
 		}
 	}
 	&:checked {
-		+ {
-			.filter-radio {
-				&::after {
-					display: block;
-				}
+		&+.filter-radio {
+			&::after {
+				display: block;
 			}
 		}
 		&:disabled {
-			+ {
-				.filter-radio {
-					&::before {
-						opacity: 0.25;
-						cursor: default;
-					}
-					&::after {
-						opacity: 0.25;
-						cursor: default;
-					}
-				}
-			}
-		}
-	}
-	&:disabled {
-		+ {
-			.filter-radio {
-				color: #a6a6a6;
-				cursor: default;
+			&+.filter-radio {
 				&::before {
 					opacity: 0.25;
 					cursor: default;
@@ -1689,6 +1693,20 @@ html[data-nameBrowser {
 					opacity: 0.25;
 					cursor: default;
 				}
+			}
+		}
+	}
+	&:disabled {
+		&+.filter-radio {
+			color: #a6a6a6;
+			cursor: default;
+			&::before {
+				opacity: 0.25;
+				cursor: default;
+			}
+			&::after {
+				opacity: 0.25;
+				cursor: default;
 			}
 		}
 	}
