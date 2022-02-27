@@ -6,7 +6,7 @@ for(var i = 0; i < btnControlSlides.length; i++){
 		btnControlSlides[i].addEventListener('click',function(e){
 			e.preventDefault();
 			for(var i = 0; i < btnControlSlides.length; i++){
-				btnControlSlides[i].firstChild.src = 'img/slider-button-empty.svg';
+				btnControlSlides[i].firstChild.src = '../imgs/slider-button-empty.svg';
 			}
 
 			for(var i = 0; i < slides.length; i++){
@@ -18,7 +18,7 @@ for(var i = 0; i < btnControlSlides.length; i++){
 			var selector = '.' + 'slide' + count[0];
 			var slide = document.querySelector(selector);
 			slide.classList.remove('visually-hidden');
-			this.firstChild.src = 'img/slider-button-active.svg';
+			this.firstChild.src = '../imgs/slider-button-active.svg';
 
 		})
 	}
