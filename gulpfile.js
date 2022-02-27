@@ -68,7 +68,17 @@ gulp.task('copy:js', function(callback){
     .pipe(gulp.dest('./build/js/'))
     callback();
 });
+gulp.task('copy:css', function(callback){
+  return gulp.src('./src/css/**/*.*')
+    .pipe(gulp.dest('./build/css/'))
+    callback();
+});
 
+gulp.task('copy:fonts', function(callback){
+  return gulp.src('./src/fonts/**/*.*')
+    .pipe(gulp.dest('./build/fonts/'))
+    callback();
+});
 
 
 
@@ -78,7 +88,7 @@ gulp.task('watch', function(){
 
 //to reload brawoser after editing img and js
   watch([
-    './build/imgs/**/*.*','./build/js/**/*.*'],
+    './build/imgs/**/*.*','./build/js/**/*.*','./build/css/**/*.*','./build/fonts/**/*.*'],
      gulp.parallel(browserSync.reload)
    );
 
@@ -92,6 +102,8 @@ gulp.task('watch', function(){
    watch('./src/html/**/*.html',gulp.parallel('html'))
    watch('./src/img/**/*.*',gulp.parallel('copy:img'))
    watch('./src/js/**/*.*',gulp.parallel('copy:js'))
+   watch('./src/css/**/*.*',gulp.parallel('copy:js'))
+   watch('./src/fonts/**/*.*',gulp.parallel('copy:fonts'))
 
 });
 
@@ -112,6 +124,6 @@ gulp.task(
   'default',
   gulp.series(
       gulp.parallel('clean:build'),
-      gulp.parallel('less','html','copy:img','copy:js'),
+      gulp.parallel('less','html','copy:img','copy:js','copy:css','copy:fonts'),
       gulp.parallel('server','watch')
     ));
