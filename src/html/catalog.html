@@ -10,15 +10,72 @@
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="inner-page">
+    <div class="container">
+        <header class="header">
 
-	@@include('./sect/_header.html')
+			<h1 class="visually-hidden">Monopod</h1>
 
+				<nav>
+					<a href="index.html" class="header-logo">
+						<h2>Device</h2>
+					</a>
 
+					<ul class="user-navigation">
+						<li class="search">
+							<form class="form-search" action="" method="get">
+								<input type="search" name="search" class="search-site" placeholder="Search" id="search-label">
+								<button type="submit" class="btn-search">Search</button>
+								<label class="search-label" for="search-label"><span class="visually-hidden">serach</span></label>
+							</form>
+						</li>
 
-	@@include('./sect/_footer.html')
+						<li class="login">
+							<a href="#" class="login-link">Reza Merzayee</a>
+							<a class="exit" href="#">Sign Out</a>
+						</li>
 
-	@@include('./sect/_modal.html')
+						<li class="compare">
+							<a href="#" class="compare-link">Compare</a>
+						</li>
+
+						<li class="cart">
+							<a href="#" class="cart-link">Basket</a>	
+						</li>
+					</ul>
+
+					<ul class="main-navigation">
+						<li class="dropdown-menu">
+							<a href="#" class="dropdown-menu-link">Catalog</a>
+
+							
+
+							<ul class="dropdown-content">
+								<li class="flex-wrapper">
+									<ul>
+										<li><a href="catalog.html">Vertual_Reality</a></li>
+										<li><a href="#">Monopod</a></li>
+										<li><a href="#">Action Camera</a></li>
+									</ul>
+									<ul>
+										<li><a href="#">Fitness Bracelet</a></li>
+										<li><a href="#">Smart Watch</a></li>
+									</ul>
+									<ul>
+										<li><a href="#">Drone</a></li>
+									</ul>
+								</li>
+							</ul>
+
+						</li>
+						<li class="header-menu-delivery"><a href="#">Delivery</a></li>
+						<li class="header-menu-guarantee"><a href="#">Grantee</a></li>
+						<li class="header-menu-contacts"><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    </div>
 
 <script src="js/products-slides-active.js"></script>
 <script src="js/services-active.js"></script>
